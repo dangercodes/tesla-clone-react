@@ -2,16 +2,39 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("../public/assets/fonts/GothamSSm-Book_Web.woff2");
+  font-display: swap;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("../public/assets/fonts/GothamSSm-Book_Web.woff2");
+  font-display: swap;
+  font-weight: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Gotham-Book";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }

@@ -2,10 +2,15 @@ import React from 'react'
 import './Header.scss'
 import {Link} from 'react-router-dom'
 import { Image } from "react-bootstrap"
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
+// import CloseIcon from '@material-ui/icons/Close';
 
 function Header({ isMenuOpen, setIsMenuOpen }) {
+
+    const triggerMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+        document.body.classList.add('no-scroll');
+    }
+
     return (
         <div className="header">
             <div className="header__logo">
@@ -22,10 +27,10 @@ function Header({ isMenuOpen, setIsMenuOpen }) {
                 <Link to="/">Solar Panels</Link>
             </div>
             <div className="header__right">
-                <Link to="/" className={isMenuOpen && 'header__link--hidden'}>Shop</Link>
-                <Link to="/login" className={isMenuOpen && 'header__link--hidden'}>Account</Link>
-                <div className="header__menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                    {isMenuOpen ? <CloseIcon/> : "Menu"}
+                <Link to="/">Shop</Link>
+                <Link to="/login">Account</Link>
+                <div className="header__menu" onClick={() => triggerMenu()}>
+                    Menu
                 </div>
             </div>
         </div>
