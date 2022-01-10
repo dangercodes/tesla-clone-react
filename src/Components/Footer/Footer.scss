@@ -1,0 +1,26 @@
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    bottom: 0;
+    z-index: 3;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        gap: 1rem;
+    }
+
+    &__list-menu {
+        list-style: none;
+
+        a {
+            color: #5c5d61;
+            text-decoration: none;
+            font-size: .8rem;
+        }
+    }
+}

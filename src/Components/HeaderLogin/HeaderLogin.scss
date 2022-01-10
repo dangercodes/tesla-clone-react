@@ -1,0 +1,46 @@
+.loginHeader {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    padding-top: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 16px 10px #fff;
+
+    &__logo {
+        .logo-img {
+            flex: 1;
+            width: 120px;
+            margin-right: 100px;
+        }
+    }
+
+    &__language {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 15px;
+        transition: all .3s;
+
+        &:hover {
+            background-color: hsla(0, 0%, 50.2%, .125);
+        }
+
+        span {
+            text-decoration: none;
+            color: #181b21;
+            font-weight: 500;
+            font-size: 15px;
+            z-index: 0;
+            position: relative;
+        }
+    }
+}
