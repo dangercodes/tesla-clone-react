@@ -10,7 +10,7 @@ function Home() {
 
     return (
         <div>
-            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} fixed={true} />
             <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
             <div className="content-wrapper">
                 <HeroBanner 

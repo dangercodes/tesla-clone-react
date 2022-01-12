@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import { Image } from "react-bootstrap"
 // import CloseIcon from '@material-ui/icons/Close';
 
-function Header({ isMenuOpen, setIsMenuOpen }) {
+function Header({ isMenuOpen, setIsMenuOpen, fixed }) {
 
     const triggerMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -12,7 +12,7 @@ function Header({ isMenuOpen, setIsMenuOpen }) {
     }
 
     return (
-        <div className="header">
+        <div className={fixed ? "header fixed" : "header"}>
             <div className="header__logo">
                 <Link to="/">
                     <Image src="assets/images/logo-tesla.svg" className="header__logoImg" alt="logo-tesla" />

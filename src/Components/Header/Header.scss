@@ -1,6 +1,5 @@
 .header {
     display: flex;
-    position: fixed;
     z-index: 2;
     top: 0;
     left: 0;
@@ -9,6 +8,10 @@
     align-items: center;
     padding: 25px 45px;
     padding-top: 15px;
+
+    &.fixed {
+        position: fixed;
+    }
 
     &__logoImg {
         object-fit: contain;
