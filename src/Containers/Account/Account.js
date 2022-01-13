@@ -24,8 +24,8 @@ function Account() {
                             <SidebarAccount />
                         </Col>
                         <Col lg="9">
-                            <Dashboard />
-                            {/* { user ? <Dashboard /> : <Navigate to="/login" /> } */}
+                            {/* <Dashboard /> */}
+                            { user ? <Dashboard /> : <Navigate to="/login" /> }
                         </Col>
                     </Row>
                 </Container>

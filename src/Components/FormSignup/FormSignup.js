@@ -31,8 +31,6 @@ function FormSignup() {
                 userAuth.user.updateProfile({
                     displayName: fName
                 })
-            })
-            .then((userAuth) => {
                 dispatch(
                     login({
                         email: userAuth.user.email,
@@ -42,7 +40,9 @@ function FormSignup() {
                 )
                 navigate('/teslaaccount')
             })
-            .catch((error) => alert(error.message))
+            .catch((error) => 
+                alert(error.message)
+            )
     }
 
     return (

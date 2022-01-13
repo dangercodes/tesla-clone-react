@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
 
 function Dashboard() {
-    const user = useSelector(selectUser);
+    const user = useSelector(selectUser)
 
     return (
         <div className="dashboard">

@@ -44,7 +44,7 @@ function HeroBanner({
     });
 
     return (
-        <div className="hero-banner" style={{backgroundImage: "url('assets/images/heroBanner/" + background + ".avif')"}}>
+        <div className="hero-banner" style={{backgroundImage: "url('assets/images/HeroBanner/" + background + ".avif')"}}>
             <div className="hero-banner__content">
                 <div className="hero-banner__info">
                     <div className="hero-banner__info-text">
@@ -54,7 +54,7 @@ function HeroBanner({
                     </div>
                 </div>
                 <div className={image !== "" ? "hero-banner__image-vector" : "hero-banner__image-vector hide"}>
-                    <Image src={["assets/images/heroBanner/" + image + ".avif"]} className="img-fluid" />
+                    <Image src={["assets/images/HeroBanner/" + image + ".avif"]} className="img-fluid" />
                 </div>
                 <div className={["hero-banner__actions " + clsNumberButton + clsTransparentButton]}>
                     <Link to={{pathname: linkButtonPrimary}}>
