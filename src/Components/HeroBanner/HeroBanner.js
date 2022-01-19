@@ -48,15 +48,15 @@ function HeroBanner({
             <div className="hero-banner__content">
                 <div className="hero-banner__info">
                     <div className="hero-banner__info-text">
-                        <h1>{type}</h1>
+                        <h1 data-aos="fade-in">{type}</h1>
                         {/* <h2>Order Online for <Link to="/">Touchless Delivery</Link></h2> */}
-                        <h2>{description}</h2>
+                        <h2 data-aos="fade-in">{description}</h2>
                     </div>
                 </div>
-                <div className={image !== "" ? "hero-banner__image-vector" : "hero-banner__image-vector hide"}>
+                <div className={image !== "" ? "hero-banner__image-vector" : "hero-banner__image-vector hide"} data-aos="fade-in">
                     <Image src={["assets/images/HeroBanner/" + image + ".avif"]} className="img-fluid" />
                 </div>
-                <div className={["hero-banner__actions " + clsNumberButton + clsTransparentButton]}>
+                <div className={["hero-banner__actions " + clsNumberButton + clsTransparentButton]} data-aos="fade-in">
                     <Link to={{pathname: linkButtonPrimary}}>
                         <Button variant="primary">{labelButtonPrimary}</Button>
                     </Link>

@@ -1,0 +1,57 @@
+@-webkit-keyframes fadeIn {
+	0%, 20%, 50%, 80%, 100% {-webkit-opacity: 1;}	
+	40% {-webkit-opacity: 0;}
+	60% {-webkit-opacity: .5;}
+}
+ 
+@-moz-keyframes fadeIn {
+	0%, 20%, 50%, 80%, 100% {-moz-opacity: 1;}
+	40% {-moz-opacity: 0;}
+	60% {-moz-opacity: .5;}
+}
+ 
+@-o-keyframes fadeIn {
+	0%, 20%, 50%, 80%, 100% {-o-opacity: 1;}
+	40% {-o-opacity: 0;}
+	60% {-o-opacity: .5;}
+}
+@keyframes fadeIn {
+	0% {opacity: 0;}
+    30% {opacity: .3;}
+	50% {opacity: .5;}
+    100% {opacity: 1;}
+}
+
+.loading {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: #fff;
+    z-index: 9999;
+    text-align: center;
+    overflow: hidden;
+
+    &__box-icon {
+        position: relative;
+        margin: 0 auto;
+        top: 40%;
+        transform: translateY(-50%);
+    }
+
+    img {
+        position: absolute;
+        margin: 0 auto;
+
+        &:first-child {
+            margin-left: -1.8rem;
+            margin-top: -1.8rem;
+        }
+    }
+
+    &__icon {
+        animation: fadeIn 1s infinite;
+        -webkit-animation: fadeIn 1s infinite;
+        -moz-animation: fadeIn 1s infinite;
+        -o-animation: fadeIn 1s infinite;
+    }
+}

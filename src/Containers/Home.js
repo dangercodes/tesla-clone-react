@@ -7,6 +7,14 @@ import { Link } from 'react-router-dom';
 
 function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const menuFooter = [
+        {id: "1", menu: "Tesla © 2022", link: "/"}, 
+        {id: "2", menu: "Privacy & Legal", link: "/"}, 
+        {id: "3", menu: "Contact", link: "/"},
+        {id: "4", menu: "Careers", link: "/"},
+        {id: "5", menu: "News", link: "/"},
+        {id: "6", menu: "Engage", link: "/"},
+        {id: "7", menu: "Locations", link: "/"}];
 
     return (
         <div>
@@ -14,10 +22,10 @@ function Home() {
             <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
             <div className="content-wrapper">
                 <HeroBanner 
-                    type="Model S" 
+                    type="Model 3" 
                     description={["Order Online for ", <Link to=''>Touchless Delivery</Link>]}
                     image=""
-                    background="hero-banner-1" 
+                    background="hero-banner-3" 
                     useArrow={true} 
                     numberOfButtons="2" 
                     labelButtonPrimary="Custom Order" 
@@ -40,10 +48,10 @@ function Home() {
                     linkButtonSecondary=""
                 />
                 <HeroBanner 
-                    type="Model 3" 
+                    type="Model S" 
                     description={["Order Online for ", <Link to=''>Touchless Delivery</Link>]}
                     image=""
-                    background="hero-banner-3" 
+                    background="hero-banner-1" 
                     useArrow={false} 
                     numberOfButtons="2" 
                     labelButtonPrimary="Custom Order" 
@@ -105,7 +113,7 @@ function Home() {
                     linkButtonSecondary=""
                 />
             </div>
-            <Footer />
+            <Footer listMenus={menuFooter} />
         </div>
     )
 }

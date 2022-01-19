@@ -30,7 +30,6 @@ function Menu({ isMenuOpen, setIsMenuOpen }) {
                 <MenuItem title="find us" />
                 <MenuItem title="support" />
                 <MenuItem title="investor relations" />
-                <MenuItem title="united states" />
             </div>
             <div className={isMenuOpen ? "menu-backdrop show" : "menu-backdrop"}></div>
         </div>

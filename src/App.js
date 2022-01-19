@@ -1,12 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import  { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Login, Signup, Account } from './Containers';
 import { login, logout } from './features/userSlice'
 import { auth } from './firebase'
 import { useDispatch } from 'react-redux'
+import Loading from './Components/Loading/Loading'
 
 function App() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   const dispatch = useDispatch()
   useEffect(() => {
       auth.onAuthStateChanged((userAuth) => {
@@ -25,15 +36,23 @@ function App() {
           }
       })
   }, [dispatch])
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return ( 
     <Router>
       <div className="App">
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/teslaaccount" element={<Account />} />
-        </Routes>
+        {loading ? 
+          <Loading /> : 
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/teslaaccount" element={<Account />} />
+          </Routes> 
+        }
       </div>
     </Router>
   );

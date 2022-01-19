@@ -48,7 +48,23 @@
             width: 230px;
             background: white;
             text-align: right;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
+            
+            .MuiSvgIcon-root {
+                border-radius: 50px;
+                width: 2rem;
+                height: 2rem;
+                padding: 0.3rem;
+                transition: .5s;
+                -webkit-transition: .5s;
+                -moz-transition: .5s;
+                -o-transition: .5s;
+
+                &:hover {
+                    background-color: hsla(0,0%,0%,.05);
+                    backdrop-filter: blur(16px);
+                }
+            }
         }
     }
     
