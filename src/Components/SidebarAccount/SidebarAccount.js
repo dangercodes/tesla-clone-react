@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux'
 import { logout } from '../../features/userSlice'
 import  { useNavigate  } from 'react-router-dom';
  
-function SidebarAccount() {
+function SidebarAccount({listMenus}) {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -27,49 +27,28 @@ function SidebarAccount() {
             })
             .catch((error) => alert(error.message))
     }
+
+    const listItems = listMenus.map((listMenu) =>
+        <li className="sidebarAccount__list-menu" key={listMenu.id}>
+            <Link to={listMenu.link} className={listMenu.class + ' sidebarAccount__link-menu'}>
+                <div className="sidebarAccount__box-icon-menu">
+                    {listMenu.icon === "HomeOutlinedIcon" ? <HomeOutlinedIcon /> 
+                      : listMenu.icon === "PermIdentityOutlinedIcon" ? <PermIdentityOutlinedIcon />
+                      : listMenu.icon === "PaymentOutlinedIcon" ? <PaymentOutlinedIcon />
+                      : listMenu.icon === "BoltOutlinedIcon" ? <BoltOutlinedIcon />
+                      : listMenu.icon === "ShoppingBagOutlinedIcon" ? <ShoppingBagOutlinedIcon />
+                      : <HomeOutlinedIcon />
+                    }
+                </div>
+                <span>{listMenu.menu}</span>
+            </Link>
+        </li>
+    );
+
     return (
         <div className="sidebarAccount">
             <ul className="sidebarAccount__box-menu">
-                <li className="sidebarAccount__list-menu">
-                    <Link to="#" className="active sidebarAccount__link-menu">
-                        <div className="sidebarAccount__box-icon-menu">
-                            <HomeOutlinedIcon />
-                        </div>
-                        <span>Dashboard</span>
-                    </Link>
-                </li>
-                <li className="sidebarAccount__list-menu">
-                    <Link to="#" className="sidebarAccount__link-menu">
-                        <div className="sidebarAccount__box-icon-menu">
-                            <PermIdentityOutlinedIcon />
-                        </div>
-                        <span>Profile Settings</span>
-                    </Link>
-                </li>
-                <li className="sidebarAccount__list-menu">
-                    <Link to="#" className="sidebarAccount__link-menu">
-                        <div className="sidebarAccount__box-icon-menu">
-                            <PaymentOutlinedIcon />
-                        </div>
-                        <span>Payment Method</span>
-                    </Link>
-                </li>
-                <li className="sidebarAccount__list-menu">
-                    <Link to="#" className="sidebarAccount__link-menu">
-                        <div className="sidebarAccount__box-icon-menu">
-                            <BoltOutlinedIcon />
-                        </div>
-                        <span>Charging</span>
-                    </Link>
-                </li>
-                <li className="sidebarAccount__list-menu">
-                    <Link to="#" className="sidebarAccount__link-menu">
-                        <div className="sidebarAccount__box-icon-menu">
-                            <ShoppingBagOutlinedIcon />
-                        </div>
-                        <span>Order History</span>
-                    </Link>
-                </li>
+                {listItems}
                 <li className="sidebarAccount__list-menu">
                     <div className="sidebarAccount__link-menu" onClick={() => logoutOfApp()}>
                         <div className="sidebarAccount__box-icon-menu">

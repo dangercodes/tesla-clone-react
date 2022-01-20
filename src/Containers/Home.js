@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header/Header';
 import Menu from '../Components/Menu/Menu';
 import HeroBanner from '../Components/HeroBanner/HeroBanner';
 import Footer from '../Components/Footer/Footer';
 import { Link } from 'react-router-dom';
+import { SEO } from '../Helpers/SEO'
 
 function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -15,6 +16,13 @@ function Home() {
         {id: "5", menu: "News", link: "/"},
         {id: "6", menu: "Engage", link: "/"},
         {id: "7", menu: "Locations", link: "/"}];
+
+    useEffect(() => {
+        SEO({
+            title: '',
+            metaDescription: ''
+        });
+    }, []);
 
     return (
         <div>

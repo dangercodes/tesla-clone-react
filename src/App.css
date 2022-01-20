@@ -1,3 +1,7 @@
 .App.isLoading {
     overflow: hidden;
 }
+
+.accountContentWrapper {
+    padding-top: 60px;
+}

@@ -9,7 +9,7 @@ function Dashboard() {
 
     return (
         <div className="dashboard">
-            <h1>Dashboard ({user?.displayName + "'s"} Tesla)</h1>
+            <h1>Dashboard ({user.displayName + "'s"} Tesla)</h1>
             <Row>
                 <Col lg="4">
                     <Card>
