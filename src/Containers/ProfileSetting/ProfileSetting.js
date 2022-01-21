@@ -6,9 +6,10 @@ import SidebarAccount from '../../Components/SidebarAccount/SidebarAccount'
 import {Container, Row, Col} from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
-import  { Navigate  } from 'react-router-dom';
-import Footer from '../../Components/Footer/Footer';
-import { SEO } from '../../Helpers/SEO';
+import  { Navigate  } from 'react-router-dom'
+import Footer from '../../Components/Footer/Footer'
+import { SEO } from '../../Helpers/SEO'
+import FormProfile from '../../Components/FormProfile/FormProfile'
 
 function ProfileSetting() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -44,8 +45,30 @@ function ProfileSetting() {
                             <SidebarAccount listMenus={sideMenuAccount} />
                         </Col>
                         <Col lg="9">
-                            {/* <Dashboard /> */}
-                            {/* { user ? <Dashboard /> : <Navigate to="/login" /> } */}
+                            <h1>Profile Settings</h1>
+                            { user ?
+                                <Row>
+                                    <Col lg="4">
+                                        <FormProfile labelForm="Full Name" valueForm={user.displayName} labelLink="Edit" link="#" buttonAdd={false} />
+                                    </Col>
+                                    <Col lg="4">
+                                        <FormProfile labelForm="Address" valueForm="" labelLink="" link="" buttonAdd={true} />
+                                    </Col>
+                                    <Col lg="4">
+                                        <FormProfile labelForm="Phone Number" valueForm="" labelLink="" link="" buttonAdd={true} />
+                                    </Col>
+                                    <Col lg="4">
+                                        <FormProfile labelForm="Email" valueForm={user.email} labelLink="Edit" link="#" buttonAdd={false} />
+                                    </Col>
+                                    <Col lg="4">
+                                        <FormProfile labelForm="Password" valueForm="*********" labelLink="Reset" link="#" buttonAdd={false} />
+                                    </Col>
+                                    <Col lg="4">
+                                        <FormProfile labelForm="Multi-factor Authentication" valueForm="Add an additional layer of security to your account" labelLink="Manage" link="#" buttonAdd={false} />
+                                    </Col>
+                                </Row>
+                                : <Navigate to="/login" />
+                            }
                         </Col>
                     </Row>
                 </Container>

@@ -29,13 +29,13 @@ function FormSignup() {
             .createUserWithEmailAndPassword(email, password)
             .then((userAuth) => {
                 userAuth.user.updateProfile({
-                    displayName: fName
+                    displayName: fName + " " + lName
                 })
                 dispatch(
                     login({
                         email: userAuth.user.email,
                         uid: userAuth.user.uid,
-                        displayName: fName,
+                        displayName: fName + " " + lName
                     })
                 )
                 navigate('/teslaaccount')

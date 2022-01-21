@@ -5,3 +5,8 @@
 .accountContentWrapper {
     padding-top: 60px;
 }
+
+.accountContentWrapper h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}

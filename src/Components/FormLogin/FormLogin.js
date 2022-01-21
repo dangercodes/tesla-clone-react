@@ -18,11 +18,12 @@ function FormLogin() {
         auth
             .signInWithEmailAndPassword(email, password)
             .then((userAuth) => {
+                console.log(userAuth)
                 dispatch(
                     login({
                         email: userAuth.user.email,
                         uid: userAuth.user.uid,
-                        displayName: userAuth.user.displayName,
+                        displayName: userAuth.user.displayName
                     })
                 )
                 navigate('/teslaaccount')

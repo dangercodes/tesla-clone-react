@@ -6,10 +6,11 @@ import { selectUser } from '../../features/userSlice'
 
 function Dashboard() {
     const user = useSelector(selectUser)
+    const newDisplayName = user.displayName.split(" ");
 
     return (
         <div className="dashboard">
-            <h1>Dashboard ({user.displayName + "'s"} Tesla)</h1>
+            <h1>Dashboard ({newDisplayName[0] + "'s"} Tesla)</h1>
             <Row>
                 <Col lg="4">
                     <Card>
