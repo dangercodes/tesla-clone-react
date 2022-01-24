@@ -22,7 +22,7 @@ function ProfileSetting() {
     const sideMenuAccount = [
         {id: "1", menu: "Dashboard", link: "/teslaaccount", class:"", icon: "HomeOutlinedIcon"}, 
         {id: "2", menu: "Profile Settings", link: "/profilesettings", class:"active", icon: "PermIdentityOutlinedIcon"},
-        {id: "3", menu: "Payment Method", link: "/", class:"", icon: "PaymentOutlinedIcon"},
+        {id: "3", menu: "Payment Method", link: "/payment-method", class:"", icon: "PaymentOutlinedIcon"},
         {id: "4", menu: "Charging", link: "/", class:"", icon: "BoltOutlinedIcon"},
         {id: "5", menu: "Order History", link: "/", class:"", icon: "ShoppingBagOutlinedIcon"}];
 

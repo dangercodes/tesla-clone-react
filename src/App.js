@@ -3,7 +3,7 @@ import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import  { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Login, Signup, Account, ProfileSetting } from './Containers';
+import { Home, Login, Signup, Account, ProfileSetting, PaymentMethod } from './Containers';
 import { login, logout } from './features/userSlice'
 import { auth } from './firebase'
 import { useDispatch } from 'react-redux'
@@ -52,6 +52,7 @@ function App() {
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/teslaaccount" element={<Account />} />
             <Route exact path="/profilesettings" element={<ProfileSetting />} />
+            <Route exact path="/payment-method" element={<PaymentMethod />} />
           </Routes> 
         }
       </div>
