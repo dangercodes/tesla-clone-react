@@ -1,63 +1,28 @@
 import React from 'react'
 import './SidebarAccount.scss'
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
-import PaymentOutlinedIcon from '@mui/icons-material/PaymentOutlined';
-import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
-import { Link } from 'react-router-dom'
-import { auth } from '../../firebase'
-import { useDispatch } from 'react-redux'
-import { logout } from '../../features/userSlice'
-import  { useNavigate  } from 'react-router-dom';
- 
-function SidebarAccount({listMenus}) {
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+import BaseSidebarAccount from '../BaseSidebarAccount/BaseSidebarAccount'
+import { useLocation } from "react-router-dom"
 
-    const logoutOfApp = () => {
-        auth
-            .signOut()
-            .then(() => {
-                dispatch(
-                    logout()
-                )
-                navigate('/')
-            })
-            .catch((error) => alert(error.message))
-    }
+function SidebarAccount() {
+    //assigning location variable
+    const location = useLocation();
 
-    const listItems = listMenus.map((listMenu) =>
-        <li className="sidebarAccount__list-menu" key={listMenu.id}>
-            <Link to={listMenu.link} className={listMenu.class + ' sidebarAccount__link-menu'}>
-                <div className="sidebarAccount__box-icon-menu">
-                    {listMenu.icon === "HomeOutlinedIcon" ? <HomeOutlinedIcon /> 
-                      : listMenu.icon === "PermIdentityOutlinedIcon" ? <PermIdentityOutlinedIcon />
-                      : listMenu.icon === "PaymentOutlinedIcon" ? <PaymentOutlinedIcon />
-                      : listMenu.icon === "BoltOutlinedIcon" ? <BoltOutlinedIcon />
-                      : listMenu.icon === "ShoppingBagOutlinedIcon" ? <ShoppingBagOutlinedIcon />
-                      : <HomeOutlinedIcon />
-                    }
-                </div>
-                <span>{listMenu.menu}</span>
-            </Link>
-        </li>
-    );
+    //destructuring pathname from location
+    const { pathname } = location;
 
+    //Javascript split method to get the name of the path in array
+    const splitLocation = pathname.split("/");
+
+    const ConfigSidebarAccount = [
+            {id: "1", menu: "Dashboard", link: "/teslaaccount", class:splitLocation[1] === "teslaaccount" ? "active" : "", icon: "HomeOutlinedIcon"}, 
+            {id: "2", menu: "Profile Settings", link: "/profilesettings", class:splitLocation[1] === "profilesettings" ? "active" : "", icon: "PermIdentityOutlinedIcon"},
+            {id: "3", menu: "Payment Method", link: "/payment-method", class:splitLocation[1] === "payment-method" ? "active" : "", icon: "PaymentOutlinedIcon"},
+            {id: "4", menu: "Charging", link: "/", class:splitLocation[1] === "charging" ? "active" : "", icon: "BoltOutlinedIcon"},
+            {id: "5", menu: "Order History", link: "/", class:splitLocation[1] === "order-history" ? "active" : "", icon: "ShoppingBagOutlinedIcon"}];
+    
     return (
-        <div className="sidebarAccount">
-            <ul className="sidebarAccount__box-menu">
-                {listItems}
-                <li className="sidebarAccount__list-menu">
-                    <div className="sidebarAccount__link-menu" onClick={() => logoutOfApp()}>
-                        <div className="sidebarAccount__box-icon-menu">
-                            <LogoutOutlinedIcon />
-                        </div>
-                        <span>Sign Out</span>
-                    </div>
-                </li>
-            </ul>
+        <div>
+            <BaseSidebarAccount listMenus={ConfigSidebarAccount} />
         </div>
     )
 }

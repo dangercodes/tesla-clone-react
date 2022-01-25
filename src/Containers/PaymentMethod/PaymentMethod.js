@@ -19,13 +19,6 @@ function PaymentMethod() {
         {id: "1", menu: "Tesla © 2022", link: "/"}, 
         {id: "2", menu: "Privacy & Legal", link: "/"}];
 
-    const sideMenuAccount = [
-        {id: "1", menu: "Dashboard", link: "/teslaaccount", class:"", icon: "HomeOutlinedIcon"}, 
-        {id: "2", menu: "Profile Settings", link: "/profilesettings", class:"", icon: "PermIdentityOutlinedIcon"},
-        {id: "3", menu: "Payment Method", link: "/payment-method", class:"active", icon: "PaymentOutlinedIcon"},
-        {id: "4", menu: "Charging", link: "/", class:"", icon: "BoltOutlinedIcon"},
-        {id: "5", menu: "Order History", link: "/", class:"", icon: "ShoppingBagOutlinedIcon"}];
-
     useEffect(() => {
         SEO({
             title: 'Payment Method | Tesla',
@@ -41,7 +34,7 @@ function PaymentMethod() {
                 <Container fluid>
                     <Row>
                         <Col lg="3">
-                            <SidebarAccount listMenus={sideMenuAccount} />
+                            <SidebarAccount />
                         </Col>
                         <Col lg="9">
                             <h1>Payment Method</h1>

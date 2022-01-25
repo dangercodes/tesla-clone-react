@@ -19,13 +19,6 @@ function Account() {
         {id: "1", menu: "Tesla © 2022", link: "/"}, 
         {id: "2", menu: "Privacy & Legal", link: "/"}];
 
-    const sideMenuAccount = [
-        {id: "1", menu: "Dashboard", link: "/teslaaccount", class:"active", icon: "HomeOutlinedIcon"}, 
-        {id: "2", menu: "Profile Settings", link: "/profilesettings", class:"", icon: "PermIdentityOutlinedIcon"},
-        {id: "3", menu: "Payment Method", link: "/payment-method", class:"", icon: "PaymentOutlinedIcon"},
-        {id: "4", menu: "Charging", link: "/", class:"", icon: "BoltOutlinedIcon"},
-        {id: "5", menu: "Order History", link: "/", class:"", icon: "ShoppingBagOutlinedIcon"}];
-
     useEffect(() => {
         SEO({
             title: 'Tesla Account | Tesla',
@@ -41,7 +34,7 @@ function Account() {
                 <Container fluid>
                     <Row>
                         <Col lg="3">
-                            <SidebarAccount listMenus={sideMenuAccount} />
+                            <SidebarAccount />
                         </Col>
                         <Col lg="9">
                             {/* <Dashboard /> */}
