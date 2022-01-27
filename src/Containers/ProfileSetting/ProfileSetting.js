@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 import './ProfileSetting.scss'
 import Header from '../../Components/Header/Header'
 import Menu from '../../Components/Menu/Menu'
-import SidebarAccount from '../../Components/SidebarAccount/SidebarAccount'
+import SidebarAccount from '../../Components/AccountComponents/SidebarAccount/SidebarAccount'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
 import  { Navigate  } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 import { SEO } from '../../Helpers/SEO'
-import FormProfile from '../../Components/FormProfile/FormProfile'
+import FormProfile from '../../Components/AccountComponents/FormProfile/FormProfile'
 
 function ProfileSetting() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)

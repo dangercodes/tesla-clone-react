@@ -1,16 +1,11 @@
 import React from 'react'
-import './Dashboard.scss'
-import {Row, Col, Card} from 'react-bootstrap'
-import { useSelector } from 'react-redux'
-import { selectUser } from '../../features/userSlice'
+import './CardDashboard.scss'
+import { Row, Col, Card } from 'react-bootstrap'
 
-function Dashboard() {
-    const user = useSelector(selectUser)
-    const newDisplayName = user.displayName.split(" ");
+function CardDashboard() {
 
     return (
         <div className="dashboard">
-            <h1>Dashboard ({newDisplayName[0] + "'s"} Tesla)</h1>
             <Row>
                 <Col lg="4">
                     <Card>
@@ -48,4 +43,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard
+export default CardDashboard

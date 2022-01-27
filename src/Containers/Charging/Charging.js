@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import './PaymentMethod.scss'
+import './Charging.scss'
 import Header from '../../Components/Header/Header'
 import Menu from '../../Components/Menu/Menu'
 import SidebarAccount from '../../Components/AccountComponents/SidebarAccount/SidebarAccount'
-import CardPaymentMethod from '../../Components/AccountComponents/CardPaymentMethod/CardPaymentMethod'
 import Footer from '../../Components/Footer/Footer'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
-import  { Navigate  } from 'react-router-dom'
+import  { Navigate, Link } from 'react-router-dom'
 import { SEO } from '../../Helpers/SEO'
+import InfoIcon from '@mui/icons-material/Info';
 
-function PaymentMethod() {
+function Charging() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const user = useSelector(selectUser)
 
@@ -21,13 +21,13 @@ function PaymentMethod() {
 
     useEffect(() => {
         SEO({
-            title: 'Payment Method | Tesla',
-            metaDescription: 'Payment Method Page'
+            title: 'Charging | Tesla',
+            metaDescription: 'Charging Page'
         });
     }, []);
 
     return (
-        <div className="paymentMethod">
+        <div className="charging">
             <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} fixed={false} />
             <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
             <div className="accountContentWrapper">
@@ -37,13 +37,17 @@ function PaymentMethod() {
                             <SidebarAccount />
                         </Col>
                         <Col lg="9">
-                            <h1>Payment Method</h1>
+                            <div className="charging__head">
+                                <h1>Charging</h1>
+                                <Link to="/">Manage Payment</Link>
+                            </div>
                             { user ?
-                                <Row>
-                                    <Col lg="4">
-                                        <CardPaymentMethod image="charging-supercharger.avif" title="Get Started" description="Set up simple and convenient charging" link="#" labelLink="Add Card" />
-                                    </Col>
-                                </Row>
+                                <div className="charging__box-info">
+                                    <div className="box-icon">
+                                        <InfoIcon />
+                                    </div>
+                                    <span>Charging sessions will appear here once they are available.</span>
+                                </div>
                                 : <Navigate to="/login" />
                             }
                         </Col>
@@ -55,4 +59,4 @@ function PaymentMethod() {
     )
 }
 
-export default PaymentMethod;
+export default Charging

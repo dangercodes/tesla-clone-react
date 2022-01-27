@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './Account.scss'
 import Header from '../../Components/Header/Header'
 import Menu from '../../Components/Menu/Menu'
-import Dashboard from '../Dashboard/Dashboard'
-import SidebarAccount from '../../Components/SidebarAccount/SidebarAccount'
+import CardDashboard from '../../Components/AccountComponents/CardDashboard/CardDashboard'
+import SidebarAccount from '../../Components/AccountComponents/SidebarAccount/SidebarAccount'
 import {Container, Row, Col} from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
@@ -14,6 +14,7 @@ import { SEO } from '../../Helpers/SEO';
 function Account() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const user = useSelector(selectUser)
+    const newDisplayName = user.displayName.split(" ");
 
     const menuFooter = [
         {id: "1", menu: "Tesla © 2022", link: "/"}, 
@@ -37,8 +38,8 @@ function Account() {
                             <SidebarAccount />
                         </Col>
                         <Col lg="9">
-                            {/* <Dashboard /> */}
-                            { user ? <Dashboard /> : <Navigate to="/login" /> }
+                            <h1>Dashboard ({newDisplayName[0] + "'s"} Tesla)</h1>
+                            { user ? <CardDashboard /> : <Navigate to="/login" /> }
                         </Col>
                     </Row>
                 </Container>

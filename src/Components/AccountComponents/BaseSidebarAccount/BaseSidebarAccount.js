@@ -7,9 +7,9 @@ import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import { Link } from 'react-router-dom'
-import { auth } from '../../firebase'
+import { auth } from '../../../firebase'
 import { useDispatch } from 'react-redux'
-import { logout } from '../../features/userSlice'
+import { logout } from '../../../features/userSlice'
 import  { useNavigate  } from 'react-router-dom';
  
 function BaseSidebarAccount({listMenus}) {
