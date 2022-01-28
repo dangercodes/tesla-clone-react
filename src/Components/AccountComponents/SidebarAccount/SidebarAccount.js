@@ -18,7 +18,7 @@ function SidebarAccount() {
             {id: "2", menu: "Profile Settings", link: "/profilesettings", class:splitLocation[1] === "profilesettings" ? "active" : "", icon: "PermIdentityOutlinedIcon"},
             {id: "3", menu: "Payment Method", link: "/payment-method", class:splitLocation[1] === "payment-method" ? "active" : "", icon: "PaymentOutlinedIcon"},
             {id: "4", menu: "Charging", link: "/charging", class:splitLocation[1] === "charging" ? "active" : "", icon: "BoltOutlinedIcon"},
-            {id: "5", menu: "Order History", link: "/", class:splitLocation[1] === "order-history" ? "active" : "", icon: "ShoppingBagOutlinedIcon"}];
+            {id: "5", menu: "Order History", link: "/order-history", class:splitLocation[1] === "order-history" ? "active" : "", icon: "ShoppingBagOutlinedIcon"}];
     
     return (
         <div>
